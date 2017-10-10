@@ -1,6 +1,8 @@
 connection: "thelook"
 
-include: "*.view.lkml"         # include all views in this project
+include: "dt.view.lkml"
+include: "datagroups.view"
+include: "users.view.lkml"         # include all views in this project
 include: "*.dashboard.lookml"  # include all dashboards in this project
 
 explore: users {
