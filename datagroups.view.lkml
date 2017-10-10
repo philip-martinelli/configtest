@@ -1,4 +1,4 @@
 datagroup: orders_dg {
-  sql_trigger: SELECT 1 ;;
+  sql_trigger: SELECT MINUTE(NOW()) ;;
   max_cache_age: "24 hours"
 }
