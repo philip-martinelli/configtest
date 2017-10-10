@@ -7,6 +7,7 @@ derived_table: {
     FROM demo_db.users
     GROUP BY 1
   ;;
+  datagroup_trigger: orders_dg
 }
 
 dimension: state {
