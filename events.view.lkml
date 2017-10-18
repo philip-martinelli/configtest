@@ -7,6 +7,8 @@ view: events {
     sql: ${TABLE}.id ;;
   }
 
+  #tt
+
   dimension_group: created {
     type: time
     timeframes: [
