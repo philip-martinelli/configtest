@@ -6,8 +6,8 @@ view: schema_migrations {
     sql: ${TABLE}.filename ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [filename]
-  }
+#   measure: count {
+#     type: count
+#     drill_fields: [filename]
+#   }
 }
