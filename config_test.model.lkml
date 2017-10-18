@@ -6,17 +6,17 @@ include: "*.view"
 # include all the dashboards
 include: "*.dashboard"
 
-explore: events {
-  description: "**testing**
-  testing....testing
-  testing
-  "
-  join: users {
-    type: left_outer
-    sql_on: ${events.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
+# explore: events {
+#   description: "**testing**
+#   testing....testing
+#   testing
+#   "
+#   join: users {
+#     type: left_outer
+#     sql_on: ${events.user_id} = ${users.id} ;;
+#     relationship: many_to_one
+#   }
+# }
 
 explore: inventory_items {
   join: products {
