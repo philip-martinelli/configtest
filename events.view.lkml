@@ -32,6 +32,7 @@ view: events {
     sql: ${TABLE}.user_id ;;
   }
 
+#do it
   dimension: value {
     type: string
     sql: ${TABLE}.value ;;
