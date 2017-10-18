@@ -7,7 +7,7 @@ view: events {
     sql: ${TABLE}.id ;;
   }
 
-
+#TEST
 
   dimension_group: created {
     type: time
