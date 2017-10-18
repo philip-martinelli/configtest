@@ -9,6 +9,8 @@ view: events {
 
   #tt
 
+  ##ttt
+
   dimension_group: created {
     type: time
     timeframes: [
