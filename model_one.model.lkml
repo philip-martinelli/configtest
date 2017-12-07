@@ -1,9 +1,13 @@
 connection: "thelook"
 
-include: "dt.view.lkml"
-include: "datagroups.view"
-include: "users.view.lkml"         # include all views in this project
+#include: "*.view.lkml"
+# include all views in this project
 include: "*.dashboard.lookml"  # include all dashboards in this project
+
+include: "/schemas_test_3/schemas_test_3.model"
+include: "/schemas_test_3/*.view"
+
+
 
 # explore: users {
 #   join: dt {
@@ -12,3 +16,7 @@ include: "*.dashboard.lookml"  # include all dashboards in this project
 #     sql_on: ${dt.state} = ${users.state} ;;
 #   }
 # }
+
+explore: users_extended {
+  extends: [users_schema]
+}
