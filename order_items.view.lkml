@@ -38,6 +38,57 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
+
+  measure: price_sum {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format: "$#.00"
+    html: {{rendered_value}} ({{percent_of_total_case._rendered_value}}) ;;
+  }
+
+  measure: price_average {
+    type: average
+    sql: ${sale_price} ;;
+    value_format: "$#.00"
+    html: {{rendered_value}} ({{percent_of_total_case._rendered_value}}) ;;
+  }
+
+  parameter: param {
+    type: string
+    allowed_value: {
+      label: "sum"
+      value: "price_sum"
+    }
+    allowed_value: {
+      label: "average"
+      value: "price_average"
+    }
+  }
+
+  measure: percent_of_total_case {
+    type: percent_of_total
+    sql:
+      CASE WHEN {% parameter param %} = "price_sum" THEN ${price_sum}
+            WHEN {% parameter param %} = "price_average" THEN ${price_average}
+            END
+    ;;
+  }
+
+  measure: percent_of_total_if_then {
+    type: percent_of_total
+    sql:
+      {% if order_items.price_sum._in_query %}
+        ${price_sum}
+      {% elsif order_items.price_average._in_query %}
+        ${price_average}
+      {% else %}
+        ""
+      {% endif %}
+    ;;
+  }
+
+
+
   measure: count {
     type: count
     drill_fields: [id, inventory_items.id, orders.id]
