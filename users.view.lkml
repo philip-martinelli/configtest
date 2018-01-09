@@ -13,6 +13,11 @@ view: users {
   }
 
   dimension: city {
+    label: "city test"
+    type: string
+    sql: ${TABLE}.city ;;
+  }
+  dimension: city_n {
     type: string
     sql: ${TABLE}.city ;;
   }

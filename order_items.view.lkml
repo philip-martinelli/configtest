@@ -42,8 +42,8 @@ view: order_items {
   measure: price_sum {
     type: sum
     sql: ${sale_price} ;;
-    value_format: "$#.00"
-    html: {{rendered_value}} ({{percent_of_total_case._rendered_value}}) ;;
+    #value_format: "$#.00"
+   # html: {{rendered_value}} ({{percent_of_total_case._rendered_value}}) ;;
   }
 
   measure: price_average {
@@ -90,7 +90,15 @@ view: order_items {
 
 
   measure: count {
-    type: count
-    drill_fields: [id, inventory_items.id, orders.id]
+    type: count_distinct
+    sql: ${id} ;;
+    link: {
+      label: "order_list"
+      url: "/dashboards/20?id={{ order_items_list._value | replace: '|RECORD|', ',' }}"
+    }
+  }
+  measure: order_items_list {
+    type: list
+    list_field: id
   }
 }

@@ -17,8 +17,6 @@ include: "/schemas_test_3/*.view"
 #   }
 # }
 
-
-### ###
-# explore: users_extended {
-#   extends: [users_schema]
-# }
+explore: users_extended {
+  extends: [users_schema]
+}
