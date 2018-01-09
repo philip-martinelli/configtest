@@ -2,6 +2,7 @@ connection: "thelook"
 
 include: "*.view.lkml"         # include all views in this project
 include: "*.dashboard.lookml"  # include all dashboards in this project
+include: "shared_dg.other.lkml"
 
 explore: users {
   view_label: "test"
@@ -20,11 +21,5 @@ explore: users {
 explore: users_ndt {}
 
 explore: order_items  {}
-
-
-datagroup: test_pm {
-  max_cache_age: "1 hour"
-  sql_trigger: SELECT 1 ;;
-}
 
 explore: pdt_extended {}
