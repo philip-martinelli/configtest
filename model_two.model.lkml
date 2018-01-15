@@ -23,3 +23,5 @@ explore: users_ndt {}
 explore: order_items  {}
 
 explore: pdt_extended {}
+
+explore: date_order {}
