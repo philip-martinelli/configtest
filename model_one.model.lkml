@@ -7,7 +7,7 @@ include: "*.dashboard.lookml"  # include all dashboards in this project
 include: "/schemas_test_3/schemas_test_3.model"
 include: "/schemas_test_3/*.view"
 
-
+#s change
 
 # explore: users {
 #   join: dt {
