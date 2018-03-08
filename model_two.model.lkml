@@ -9,7 +9,7 @@ explore: users {
   join: orders {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${users.id}= ${orders.user_id}  ;;
+    sql_on: ${users.state}= ${orders.user_id}  ;;
   }
   join: order_items {
     type: left_outer
